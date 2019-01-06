@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class MaximizeSeuTempoApplicationTests {
 	
 	//TODO: IMPLEMENTAR TESTES
-
 	@Test
 	public void contextLoads() {
 		
