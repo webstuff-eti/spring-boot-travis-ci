@@ -20,6 +20,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import br.eti.webstuff.api.enumerations.TipoPerfilUsuario;
 
 @Entity
@@ -34,6 +37,11 @@ public class Funcionario implements Serializable {
 	private Long id;
 
 	private String nome;
+	
+
+	@Column(name="email", unique=true)
+	@Email(message="{register.email.invalid}")
+	@NotBlank(message="{register.email.invalid}")
 	private String email;
 	private String senha;
 	private String cpf;
