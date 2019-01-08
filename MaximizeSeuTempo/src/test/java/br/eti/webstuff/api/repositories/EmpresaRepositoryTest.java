@@ -12,6 +12,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import br.eti.webstuff.api.entities.Empresa;
+import br.eti.webstuff.api.repositories.builder.DadosComuns;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -21,13 +22,12 @@ public class EmpresaRepositoryTest {
 	@Autowired
 	private EmpresaRepository repository;
 	
-	private static final String CNPJ = "33637290000138";
 	
 	@Before
 	public void setUp() throws Exception {
 		Empresa empresa = new Empresa();
-		empresa.setCnpj(CNPJ);
-		empresa.setRazaoSocial("Web Stuff");
+		empresa.setCnpj(DadosComuns.getCnpj());
+		empresa.setRazaoSocial(DadosComuns.getRazaoSocial());
 		this.repository.save(empresa);
 	}
 	
@@ -38,7 +38,7 @@ public class EmpresaRepositoryTest {
 	
 	@Test
 	public void buscarPorCNPJ() {
-		Empresa empresa = this.repository.findByCnpj(CNPJ);
-		assertEquals(CNPJ, empresa.getCnpj());
+		Empresa empresa = this.repository.findByCnpj(DadosComuns.getCnpj());
+		assertEquals(DadosComuns.getCnpj(), empresa.getCnpj());
 	}
 }
