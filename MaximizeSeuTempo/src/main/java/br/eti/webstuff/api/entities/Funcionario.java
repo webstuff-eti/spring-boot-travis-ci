@@ -36,17 +36,26 @@ public class Funcionario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Column(name="nome", nullable=false)
 	private String nome;
 	
 
 	@Column(name="email", unique=true)
-	@Email(message="{register.email.invalid}")
+	//@Email(message="{register.email.invalid}")
 	@NotBlank(message="{register.email.invalid}")
 	private String email;
+	
 	private String senha;
+	
 	private String cpf;
+	
+	@Column(name="valor_hora", nullable=true)
 	private BigDecimal valorHora;
+	
+	@Column(name="qtd_horas_trabalho_dia", nullable=true)
 	private Float qtdHorasTrabalhoDia;
+	
+	@Column(name="qtd_horas_almoco", nullable=true)
 	private Float qtdHorasAlmoco;
 
 	@Enumerated(EnumType.STRING)
