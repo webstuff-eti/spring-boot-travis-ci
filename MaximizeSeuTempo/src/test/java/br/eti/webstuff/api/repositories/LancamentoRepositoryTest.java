@@ -79,7 +79,4 @@ public class LancamentoRepositoryTest {
 		assertEquals(2, lancamentos.getTotalElements());
 	}
 	
-	
-	
-
 }
