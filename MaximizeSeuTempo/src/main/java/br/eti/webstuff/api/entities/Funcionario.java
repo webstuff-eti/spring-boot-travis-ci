@@ -20,7 +20,6 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import br.eti.webstuff.api.enumerations.TipoPerfilUsuario;
