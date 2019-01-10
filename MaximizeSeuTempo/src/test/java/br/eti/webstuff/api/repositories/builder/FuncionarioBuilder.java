@@ -16,7 +16,8 @@ public class FuncionarioBuilder {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(NOME);
 		funcionario.setPerfil(TipoPerfilUsuario.ROLE_USUARIO);
-		funcionario.setSenha(PasswordSecurity.gerarBCrypt(DadosComuns.getSenha()));
+		//funcionario.setSenha(PasswordSecurity.gerarBCrypt(DadosComuns.getSenha()));
+		funcionario.setSenha("12312432423432423");
 		funcionario.setCpf(DadosComuns.getCpf());
 		funcionario.setEmail(DadosComuns.getEmail());
 		funcionario.setEmpresa(empresa);

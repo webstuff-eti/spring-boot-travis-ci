@@ -2,7 +2,7 @@ package br.eti.webstuff.api.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordSecurity {
 	
@@ -21,6 +21,7 @@ public class PasswordSecurity {
 	  - retorna um Hash da senha informada pelo usuário
 	*/
 	
+	/*
 	public static String gerarBCrypt(String senha) {
 		
 		if(senha == null) {
@@ -32,5 +33,6 @@ public class PasswordSecurity {
 		return bCryptPasswordEncoder.encode(senha);
 		
 	}
+	*/
 
 }
