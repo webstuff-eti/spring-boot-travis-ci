@@ -3,6 +3,8 @@ package br.eti.webstuff.api.web.controller.empresa;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.BindingResult;
@@ -68,13 +72,41 @@ public class EmpresaController  implements IEmpresaController, IEmpresaUtils {
 		response.setData(conversor.converteEmpresaParaEmpresaDto(empresa.get()));
 		return ResponseEntity.ok(response);
 	}
+	
+	/**
+	 * Cadastra uma empresa
+	 * 
+	 * @param empresaDto
+	 * @param result
+	 * @return ResponseEntity<Response<EmpresaDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
 
+	@PostMapping
 	@Override
-	public ResponseEntity<Response<EmpresaDto>> cadastrar(EmpresaDto empresaDto, BindingResult result)
+	public ResponseEntity<Response<EmpresaDto>> cadastrar(@Valid @RequestBody EmpresaDto empresaDto, BindingResult result)
 			throws NoSuchAlgorithmException {
 		
+		log.info("Cadastra uma empresa: {}", empresaDto.toString());
 		
-		return null;
+		Response<EmpresaDto> response = new Response<EmpresaDto>();
+		ConverteEmpresa converte = new ConverteEmpresa();
+		
+		validarExistenciaDaEmpresaParaCadastro(empresaDto, result);
+		
+		Empresa empr = converte.converteEmpresaDtoParaEmpresa(empresaDto);
+		
+		if(result.hasErrors()) {
+			log.error("Erro de validação de dados da empresa a ser cadastrada", result.getAllErrors());
+			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(response);
+		}
+		
+		Empresa empresa = this.empresaService.persistir(empr);
+		
+		response.setData(converte.converteEmpresaParaEmpresaDto(empresa));
+		
+		return ResponseEntity.ok(response);
 	}
 
 	@Override
