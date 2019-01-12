@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import br.eti.webstuff.api.web.controller.responses.Response;
-import br.eti.webstuff.api.web.dto.EmpresaDto;
+import br.eti.webstuff.api.web.dto.request.EmpresaRequestDto;
+import br.eti.webstuff.api.web.dto.response.EmpresaResponseDto;
 
 public interface IEmpresaController {
 
-	public ResponseEntity<Response<EmpresaDto>> buscarPorCnpj(@PathVariable("cnpj") String documento);
+	public ResponseEntity<Response<EmpresaResponseDto>> buscarPorCnpj(@PathVariable("cnpj") String documento);
 
-	public ResponseEntity<Response<EmpresaDto>> cadastrar(@Valid @RequestBody EmpresaDto empresaDto,
+	public ResponseEntity<Response<EmpresaResponseDto>> cadastrar(@Valid @RequestBody EmpresaRequestDto empresaDto,
 			BindingResult result) throws NoSuchAlgorithmException;
 
-	public ResponseEntity<Response<EmpresaDto>> atualizaEmpresaById(@PathVariable("id") Long id,
-			@Valid @RequestBody EmpresaDto empresaDto, BindingResult result) throws NoSuchAlgorithmException;
+	public ResponseEntity<Response<EmpresaResponseDto>> atualizaEmpresaById(@PathVariable("id") Long id,
+			@Valid @RequestBody EmpresaRequestDto empresaDto, BindingResult result) throws NoSuchAlgorithmException;
 
 }

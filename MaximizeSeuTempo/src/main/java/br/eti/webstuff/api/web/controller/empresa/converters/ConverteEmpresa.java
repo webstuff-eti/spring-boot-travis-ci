@@ -1,7 +1,8 @@
 package br.eti.webstuff.api.web.controller.empresa.converters;
 
 import br.eti.webstuff.api.entities.Empresa;
-import br.eti.webstuff.api.web.dto.EmpresaDto;
+import br.eti.webstuff.api.web.dto.request.EmpresaRequestDto;
+import br.eti.webstuff.api.web.dto.response.EmpresaResponseDto;
 
 public class ConverteEmpresa {
 	
@@ -12,16 +13,16 @@ public class ConverteEmpresa {
 	 * 
 	 * @return EmpresaDto
 	 */
-	 public EmpresaDto converteEmpresaParaEmpresaDto(Empresa empresa) {
+	 public EmpresaResponseDto converteEmpresaParaEmpresaResponseDto(Empresa empresa) {
 		
-		EmpresaDto empresaDto = new EmpresaDto();
+		 EmpresaResponseDto empresaResponseDto = new EmpresaResponseDto();
 		
 		if(empresa != null) {
-			empresaDto.setId(empresa.getId());
-			empresaDto.setCnpj(empresa.getCnpj());
-			empresaDto.setRazaoSocial(empresa.getRazaoSocial());
+			empresaResponseDto.setId(empresa.getId());
+			empresaResponseDto.setCnpj(empresa.getCnpj());
+			empresaResponseDto.setRazaoSocial(empresa.getRazaoSocial());
 		}
-		return empresaDto;
+		return empresaResponseDto;
 	}
 	 
 	 /**
@@ -31,15 +32,13 @@ public class ConverteEmpresa {
 		 *
 		 * @return empresa
 		 */
-	public Empresa converteEmpresaDtoParaEmpresa(EmpresaDto empresaDto) {
+	public Empresa converteEmpresaRequestDtoParaEmpresa(EmpresaRequestDto empresaRequestDto) {
 		
 		Empresa empresa = new Empresa();
 		
-		empresa.setCnpj(empresaDto.getCnpj());
-		empresa.setRazaoSocial(empresaDto.getRazaoSocial());
-		if(empresaDto.getId() != null) {
-			empresa.setId(empresaDto.getId());
-		}
+		empresa.setCnpj(empresaRequestDto.getCnpj());
+		empresa.setRazaoSocial(empresaRequestDto.getRazaoSocial());
+		
 		return empresa;
 	}
 	
