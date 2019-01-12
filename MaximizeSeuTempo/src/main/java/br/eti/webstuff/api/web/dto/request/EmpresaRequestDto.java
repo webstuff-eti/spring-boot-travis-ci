@@ -1,22 +1,14 @@
-package br.eti.webstuff.api.web.dto;
+package br.eti.webstuff.api.web.dto.request;
 
-public class EmpresaDto {
+public class EmpresaRequestDto {
 
-	private Long id;
 	private String razaoSocial;
 	private String cnpj;
 
-	public EmpresaDto() {
+	public EmpresaRequestDto() {
 
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 
 	public String getRazaoSocial() {
 		return razaoSocial;
@@ -36,7 +28,7 @@ public class EmpresaDto {
 
 	@Override
 	public String toString() {
-		return "EmpresaDto [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + "]";
+		return "EmpresaDto [razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + "]";
 	}
 
 }
