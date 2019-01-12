@@ -150,7 +150,7 @@ public class EmpresaController  implements IEmpresaController, IEmpresaUtils {
 	
 
 	@Override
-	public void atualizaDadosEmpresa(Empresa empresa, EmpresaResponseDto empresaResponseDto, BindingResult result)
+	public void atualizaDadosEmpresa(Empresa empresa, EmpresaRequestDto empresaRequestDto, BindingResult result)
 			throws NoSuchAlgorithmException {
 		// TODO Auto-generated method stub
 		
