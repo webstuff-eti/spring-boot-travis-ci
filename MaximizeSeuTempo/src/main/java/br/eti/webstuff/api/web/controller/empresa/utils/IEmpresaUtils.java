@@ -10,7 +10,7 @@ import br.eti.webstuff.api.web.dto.response.EmpresaResponseDto;
 
 public interface IEmpresaUtils {
 
-	public void atualizaDadosEmpresa(Empresa empresa, EmpresaResponseDto empresaResponseDto, BindingResult result)
+	public void atualizaDadosEmpresa(Empresa empresa, EmpresaRequestDto empresaRequestDto, BindingResult result)
 			throws NoSuchAlgorithmException;
 
 	public void validarExistenciaDaEmpresaParaCadastro(EmpresaRequestDto empresaRequestDto, BindingResult result);
