@@ -5,12 +5,10 @@ import java.util.Optional;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
 public class PessoaFisicaRequestDto {
 
-	private Long id;
 
 	@NotEmpty(message = "O nome deve ser preenchido.")
 	@Length(min = 3, max = 200, message = "Nome deve conter entre 3 e 200 caracteres.")
@@ -28,9 +26,6 @@ public class PessoaFisicaRequestDto {
 	@CPF(message = "CPF inválido")
 	private String cpf;
 
-	@NotEmpty(message = "CNPJ não pode ser vazio.")
-	@CNPJ(message = "CNPJ inválido.")
-	private String cnpj;
 
 	private Optional<String> valorHora = Optional.empty();
 	private Optional<String> qtdHorasTrabalhoDia = Optional.empty();
@@ -39,13 +34,6 @@ public class PessoaFisicaRequestDto {
 	public PessoaFisicaRequestDto() {
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
@@ -79,14 +67,6 @@ public class PessoaFisicaRequestDto {
 		this.cpf = cpf;
 	}
 
-	public String getCnpj() {
-		return cnpj;
-	}
-
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-
 	public Optional<String> getValorHora() {
 		return valorHora;
 	}
@@ -113,8 +93,8 @@ public class PessoaFisicaRequestDto {
 
 	@Override
 	public String toString() {
-		return "PessoaFisicaDto [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
-				+ ", cnpj=" + cnpj + ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia
+		return "PessoaFisicaDto [nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
+				+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia
 				+ ", qtdHorasAlmoco=" + qtdHorasAlmoco + "]";
 	}
 
