@@ -21,9 +21,6 @@ public class PessoaFisicaResponseDto {
 	@Email(message = "Email inválido.")
 	private String email;
 
-	@NotEmpty(message = "A Senha deve ser preenchida.")
-	private String senha;
-
 	@NotEmpty(message = "O CPF deve ser preenchido.")
 	@CPF(message = "CPF inválido")
 	private String cpf;
@@ -61,14 +58,6 @@ public class PessoaFisicaResponseDto {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public String getCpf() {
@@ -113,7 +102,7 @@ public class PessoaFisicaResponseDto {
 
 	@Override
 	public String toString() {
-		return "PessoaFisicaDto [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
+		return "PessoaFisicaDto [id=" + id + ", nome=" + nome + ", email=" + email + ", cpf=" + cpf
 				+ ", cnpj=" + cnpj + ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia
 				+ ", qtdHorasAlmoco=" + qtdHorasAlmoco + "]";
 	}
