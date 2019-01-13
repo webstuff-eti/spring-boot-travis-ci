@@ -22,7 +22,7 @@ public class ConverterPessoaFisica {
 	* @return Funcionario
 	* @throws NoSuchAlgorithmException
 	*/
-	private Funcionario converterPessoaFisicaRequestDtoParaFuncionario(PessoaFisicaRequestDto pessoaFisicaRequestDto, BindingResult result)
+	public Funcionario converterPessoaFisicaRequestDtoParaFuncionario(PessoaFisicaRequestDto pessoaFisicaRequestDto, BindingResult result)
 			throws NoSuchAlgorithmException {
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(pessoaFisicaRequestDto.getNome());
@@ -46,9 +46,9 @@ public class ConverterPessoaFisica {
 	 * Converte Funcionário para PessoaFisicaResponseDto.
 	 * 
 	 * @param funcionario
-	 * @return CadastroPFDto
+	 * @return PessoaFisicaResponseDto
 	 */
-	private PessoaFisicaResponseDto converterCadastroPFDto(Funcionario funcionario) {
+	public PessoaFisicaResponseDto converterCadastroPFDto(Funcionario funcionario) {
 		PessoaFisicaResponseDto pessoaFisicaResponseDto = new PessoaFisicaResponseDto();
 		pessoaFisicaResponseDto.setId(funcionario.getId());
 		pessoaFisicaResponseDto.setNome(funcionario.getNome());
