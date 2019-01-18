@@ -19,12 +19,16 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import br.eti.webstuff.api.enumerations.TipoEnum;
+import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name = "lacamento")
+@Data
+@ToString
 public class Lancamento implements Serializable {
-	
-	private static final long serialVersionUID = 7219151592004019160L;
+
+	private static final long serialVersionUID = 3974218775298806528L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -50,70 +54,6 @@ public class Lancamento implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Funcionario funcionario;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getLocalizacao() {
-		return localizacao;
-	}
-
-	public void setLocalizacao(String localizacao) {
-		this.localizacao = localizacao;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public Date getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(Date dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
-	public Date getDataAtualizacao() {
-		return dataAtualizacao;
-	}
-
-	public void setDataAtualizacao(Date dataAtualizacao) {
-		this.dataAtualizacao = dataAtualizacao;
-	}
-
-	public TipoEnum getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(TipoEnum tipo) {
-		this.tipo = tipo;
-	}
-
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
-
 	@PreUpdate
 	public void preUpdate() {
 		dataAtualizacao = new Date();
@@ -124,13 +64,6 @@ public class Lancamento implements Serializable {
 		final Date atual = new Date();
 		dataCriacao = atual;
 		dataAtualizacao = atual;
-	}
-
-	@Override
-	public String toString() {
-		return "Lancamento [id=" + id + ", descricao=" + descricao + ", localizacao=" + localizacao + ", data=" + data
-				+ ", dataCriacao=" + dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", tipo=" + tipo
-				+ ", funcionario=" + funcionario + "]";
 	}
 
 }

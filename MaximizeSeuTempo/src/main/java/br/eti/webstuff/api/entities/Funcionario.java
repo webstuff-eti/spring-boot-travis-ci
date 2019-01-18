@@ -25,13 +25,16 @@ import javax.persistence.Transient;
 import org.hibernate.validator.constraints.NotBlank;
 
 import br.eti.webstuff.api.enumerations.TipoPerfilUsuario;
+import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name = "funcionario")
+@Data
+@ToString
 public class Funcionario implements Serializable {
-	
 
-	private static final long serialVersionUID = -2620165498850085230L;
+	private static final long serialVersionUID = -3957646851993096408L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -79,74 +82,14 @@ public class Funcionario implements Serializable {
 
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public BigDecimal getValorHora() {
-		return valorHora;
-	}
-	
 	@Transient
 	public Optional<BigDecimal> getValorHoraOpt() {
 		return Optional.ofNullable(valorHora);
-	}
-
-	public void setValorHora(BigDecimal valorHora) {
-		this.valorHora = valorHora;
-	}
-
-	public Float getQtdHorasTrabalhoDia() {
-		return qtdHorasTrabalhoDia;
 	}
 	
 	@Transient
 	public Optional<Float> getQtdHorasTrabalhoDiaOpt() {
 		return Optional.ofNullable(qtdHorasTrabalhoDia);
-	}
-
-	public void setQtdHorasTrabalhoDia(Float qtdHorasTrabalhoDia) {
-		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
-	}
-
-	public Float getQtdHorasAlmoco() {
-		return qtdHorasAlmoco;
 	}
 	
 	@Transient
@@ -154,49 +97,6 @@ public class Funcionario implements Serializable {
 		return Optional.ofNullable(qtdHorasAlmoco);
 	}
 
-	public void setQtdHorasAlmoco(Float qtdHorasAlmoco) {
-		this.qtdHorasAlmoco = qtdHorasAlmoco;
-	}
-
-	public TipoPerfilUsuario getPerfil() {
-		return perfil;
-	}
-
-	public void setPerfil(TipoPerfilUsuario perfil) {
-		this.perfil = perfil;
-	}
-
-	public Date getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(Date dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
-	public Date getDataAtualizacao() {
-		return dataAtualizacao;
-	}
-
-	public void setDataAtualizacao(Date dataAtualizacao) {
-		this.dataAtualizacao = dataAtualizacao;
-	}
-
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
-
-	public List<Lancamento> getLancamentos() {
-		return lancamentos;
-	}
-
-	public void setLancamentos(List<Lancamento> lancamentos) {
-		this.lancamentos = lancamentos;
-	}
 
 	@PreUpdate
 	public void preUpdate() {
@@ -209,13 +109,6 @@ public class Funcionario implements Serializable {
 		dataCriacao = atual;
 		dataAtualizacao = atual;
 	}
-
-	@Override
-	public String toString() {
-		return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
-				+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
-				+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao=" + dataCriacao + ", dataAtualizacao="
-				+ dataAtualizacao + ", empresa=" + empresa + ", lancamentos=" + lancamentos + "]";
-	}
+	
 
 }
