@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -27,13 +27,15 @@ import br.eti.webstuff.api.web.controller.funcionario.utils.IFuncionarioPessoaFi
 import br.eti.webstuff.api.web.controller.responses.Response;
 import br.eti.webstuff.api.web.dto.request.PessoaFisicaRequestDto;
 import br.eti.webstuff.api.web.dto.response.PessoaFisicaResponseDto;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/pessoa/fisica")
 @CrossOrigin("*")
+@Slf4j
 public class FuncionarioPessoaFisicaController implements IFuncionarioPessoaFisicaController, IFuncionarioPessoaFisicaUtil {
 	
-	private static final Logger log = LoggerFactory.getLogger(FuncionarioPessoaFisicaController.class);
+	//private static final Logger log = LoggerFactory.getLogger(FuncionarioPessoaFisicaController.class);
 	
 
 	@Autowired
@@ -61,6 +63,7 @@ public class FuncionarioPessoaFisicaController implements IFuncionarioPessoaFisi
 			PessoaFisicaRequestDto pessoaFisicaRequestDto, BindingResult result) throws NoSuchAlgorithmException {
 		
 		log.info("Cadastro de Pessoa Física", pessoaFisicaRequestDto.toString());
+	
 		
 		Response<PessoaFisicaResponseDto> response = new Response<PessoaFisicaResponseDto>();
 		ConverterPessoaFisica convertePessoaFisica = new ConverterPessoaFisica();
