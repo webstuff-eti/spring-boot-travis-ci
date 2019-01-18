@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import br.eti.webstuff.api.web.controller.responses.Response;
-import br.eti.webstuff.api.web.dto.request.EmpresaRequestDto;
 import br.eti.webstuff.api.web.dto.request.PessoaFisicaRequestDto;
-import br.eti.webstuff.api.web.dto.response.EmpresaResponseDto;
 import br.eti.webstuff.api.web.dto.response.PessoaFisicaResponseDto;
 
 public interface IFuncionarioPessoaFisicaController {
