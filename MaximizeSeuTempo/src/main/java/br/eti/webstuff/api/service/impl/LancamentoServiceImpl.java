@@ -2,8 +2,6 @@ package br.eti.webstuff.api.service.impl;
 
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,11 +10,11 @@ import org.springframework.stereotype.Service;
 import br.eti.webstuff.api.entities.Lancamento;
 import br.eti.webstuff.api.repositories.LancamentoRepository;
 import br.eti.webstuff.api.service.LancamentoService;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class LancamentoServiceImpl implements LancamentoService {
-
-	private static final Logger log = LoggerFactory.getLogger(LancamentoServiceImpl.class);
 
 	@Autowired
 	private LancamentoRepository lancamentoRepository;

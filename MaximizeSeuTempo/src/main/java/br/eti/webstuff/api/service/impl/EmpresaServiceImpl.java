@@ -2,21 +2,18 @@ package br.eti.webstuff.api.service.impl;
 
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.eti.webstuff.api.entities.Empresa;
 import br.eti.webstuff.api.repositories.EmpresaRepository;
 import br.eti.webstuff.api.service.EmpresaService;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class EmpresaServiceImpl implements EmpresaService {
-	
-
-	private static final Logger log = LoggerFactory.getLogger(EmpresaServiceImpl.class);
-	
 	
 	@Autowired
 	private EmpresaRepository empresaRepository;
@@ -34,5 +31,4 @@ public class EmpresaServiceImpl implements EmpresaService {
 	}
 	
 	
-
 }
