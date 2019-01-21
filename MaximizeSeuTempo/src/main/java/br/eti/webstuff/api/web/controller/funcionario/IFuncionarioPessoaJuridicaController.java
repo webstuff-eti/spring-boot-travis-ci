@@ -15,13 +15,13 @@ import br.eti.webstuff.api.web.dto.response.PessoaJuridicaResponseDto;
 
 public interface IFuncionarioPessoaJuridicaController {
 	
-	public ResponseEntity<Response<PessoaJuridicaResponseDto>> cadastrarPessoaFisica(@Valid @RequestBody PessoaJuridicaRequestDto pessoaJuridicaRequestDto,
+	public ResponseEntity<Response<PessoaJuridicaResponseDto>> cadastrarPessoaJuridica(@Valid @RequestBody PessoaJuridicaRequestDto pessoaJuridicaRequestDto,
 			BindingResult result) throws NoSuchAlgorithmException;
 	
 	public ResponseEntity<Response<PessoaJuridicaResponseDto>> buscarPorCpf(@PathVariable("cpf") String documento);
 	
 	
-	public ResponseEntity<Response<PessoaJuridicaResponseDto>> atualizarPessoaFisicaById(@PathVariable("id") Long id,
+	public ResponseEntity<Response<PessoaJuridicaResponseDto>> atualizarPessoaJuridicaById(@PathVariable("id") Long id,
 			@Valid @RequestBody PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result) throws NoSuchAlgorithmException;
 
 }

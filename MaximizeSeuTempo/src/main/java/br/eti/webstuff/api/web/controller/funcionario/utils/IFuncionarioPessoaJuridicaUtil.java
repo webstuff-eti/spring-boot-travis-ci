@@ -11,11 +11,11 @@ import br.eti.webstuff.api.web.dto.request.PessoaJuridicaRequestDto;
 public interface IFuncionarioPessoaJuridicaUtil {
 	
 	
-	public void atualizaDadosFuncionarioPessoaFisica(Funcionario funcionario, PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result)
+	public void atualizaDadosFuncionarioPessoaJuridica(Funcionario funcionario, PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result)
 			throws NoSuchAlgorithmException;
 
-	public void validarExistenciaDoFuncionarioPessoaFisicaParaCadastro(PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result);
+	public void validarExistenciaDoFuncionarioPessoaJuridicaParaCadastro(PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result);
 
-	public void validarExistenciaDoFuncionarioPessoaFisicaParaAtualizacao(PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result);
+	public void validarExistenciaDoFuncionarioPessoaJuridicaParaAtualizacao(PessoaJuridicaRequestDto pessoaJuridicaRequestDto, BindingResult result);
 
 }

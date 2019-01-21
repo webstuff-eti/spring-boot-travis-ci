@@ -45,9 +45,9 @@ public class FuncionarioPessoaFisicaController implements IFuncionarioPessoaFisi
 	
 	
    /**
-	* Cadastra um funcionário pessoa física no sistema.
+	* Cadastra um funcionário pessoa física.
 	* 
-	* @param cadastroPFDto
+	* @param pessoaFisicaRequestDto
 	* @param result
 	* @return ResponseEntity<Response<PessoaFisicaResponseDto>>
 	* @throws NoSuchAlgorithmException
