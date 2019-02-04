@@ -16,6 +16,8 @@
 	<description>API Spring Boot para aproveitamento do tempo</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -113,6 +115,10 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

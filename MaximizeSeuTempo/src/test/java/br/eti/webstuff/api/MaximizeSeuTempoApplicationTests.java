@@ -13,6 +13,5 @@ public class MaximizeSeuTempoApplicationTests {
 	public void contextLoads() {
 		
 	}
-
 }
 

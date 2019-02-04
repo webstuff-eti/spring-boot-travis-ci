@@ -11,5 +11,16 @@ public class EmpresaBuilder {
 		empresa.setRazaoSocial("Web Stuff");
 		return empresa;
 	}
+	
+	public static Empresa obterEmpresa() {
+		
+		Empresa empresa = new Empresa();
+		
+		empresa.setId(DadosComuns.ID);
+		empresa.setRazaoSocial(DadosComuns.RAZAO_SOCIAL_ADV);
+		empresa.setCnpj(DadosComuns.CNPJ_ADV);
+		
+        return empresa;		
+	}
 
 }

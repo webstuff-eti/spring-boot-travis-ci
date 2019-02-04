@@ -26,8 +26,8 @@ public class EmpresaRepositoryTest {
 	@Before
 	public void setUp() throws Exception {
 		Empresa empresa = new Empresa();
-		empresa.setCnpj(DadosComuns.getCnpj());
-		empresa.setRazaoSocial(DadosComuns.getRazaoSocial());
+		empresa.setCnpj(DadosComuns.CNPJ);
+		empresa.setRazaoSocial(DadosComuns.RAZAO_SOCIAL);
 		this.repository.save(empresa);
 	}
 	
@@ -38,7 +38,7 @@ public class EmpresaRepositoryTest {
 	
 	@Test
 	public void buscarPorCNPJ() {
-		Empresa empresa = this.repository.findByCnpj(DadosComuns.getCnpj());
-		assertEquals(DadosComuns.getCnpj(), empresa.getCnpj());
+		Empresa empresa = this.repository.findByCnpj(DadosComuns.CNPJ);
+		assertEquals(DadosComuns.CNPJ, empresa.getCnpj());
 	}
 }
